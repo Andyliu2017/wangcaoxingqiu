@@ -1,0 +1,6 @@
+framework module IBXSDK {
+  umbrella header "IBXSDK-umbrella.h"
+
+  export *
+  module * { export * }
+}

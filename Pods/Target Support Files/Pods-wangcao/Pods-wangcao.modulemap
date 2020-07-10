@@ -1,0 +1,6 @@
+module Pods_wangcao {
+  umbrella header "Pods-wangcao-umbrella.h"
+
+  export *
+  module * { export * }
+}

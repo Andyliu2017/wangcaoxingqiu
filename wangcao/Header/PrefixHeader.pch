@@ -1,0 +1,170 @@
+//
+//  PrefixHeader.pch
+//  wangcao
+//
+//  Created by liu dequan on 2020/4/29.
+//  Copyright © 2020 andy. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+#import "Masonry.h"
+#import "WCApiManager.h"
+#import "MJExtension.h"
+#import "Tools.h"
+#import <YYKit.h>
+#import <UIImageView+YYWebImage.h>
+#import "GGUI.h"
+#import <MBProgressHUD.h>
+#import "MBProgressHUD+Toolkit.h"
+#import "WCBaseViewController.h"
+#import "RedButton.h"
+#import "PaopaoButton.h"
+#import "PBCache.h"
+#import <MJRefresh.h>
+#import "APHandleManager.h"
+#import <BUAdSDK/BUAdSDK.h>
+#import <BUAdSDK/BUAdSDKManager.h>
+#import <BUAdSDK/BURewardedVideoAd.h>
+#import <BUAdSDK/BURewardedVideoModel.h>
+#import "OtherPopView.h"
+#import "WCWebViewController.h"
+#import "NotificationName.h"
+#import <UIScrollView+EmptyDataSet.h>
+#import "AdHandleManager.h"
+#import "MQTTHandleManager.h"
+#import "AdSlotView.h"
+#import <WXApi.h>
+#import "YLManager.h"
+
+//model
+#import "WCBaseModel.h"
+#import "WinLotteryModel.h"
+#import "WinContentModel.h"
+#import "RecordListModel.h"
+#import "ContentModel.h"
+#import "DynastyModel.h"
+#import "DynastyBuildModel.h"
+#import "GoldModel.h"
+#import "SigninVoModel.h"
+#import "RankModel.h"
+#import "RedPackageModel.h"
+#import "RecviedRedModel.h"
+#import "UserTeamModel.h"
+#import "TeamNumberModel.h"
+#import "UncertInfoVoModel.h"
+#import "DynastyFanPianModel.h"
+#import "TaskDetailModel.h"
+#import "PKShouyeModel.h"
+#import "PKPersonInfoModel.h"
+#import "PKTeamInfoModel.h"
+#import "UserModel.h"
+#import "PKSubjectModel.h"
+#import "PKAnswerModel.h"
+#import "PKRebirthModel.h"
+#import "BonusModel.h"
+#import "BonusProgressModel.h"
+#import "SystemModel.h"
+#import "FotonExchangeModel.h"
+#import "FotonModel.h"
+#import "OfflineProfitModel.h"
+#import "LotteryListModel.h"
+#import "AllusionListModel.h"
+#import "MergeSuccessModel.h"
+#import "MessageModel.h"
+#import "ReflectConfigModel.h"
+#import "UserAccountModel.h"
+#import "ShiMingModel.h"
+#import "ReflectListModel.h"
+#import "MoneyRecordModel.h"
+#import "WithdrawModel.h"
+#import "MQTTModel.h"
+#import "InviteModel.h"
+#import "YuleModel.h"
+
+//Color
+#define RGB(r, g, b)                        [UIColor colorWithRed:r/255.0 green:g/255.0 blue:b/255.0 alpha:1.0]
+#define RGBA(r, g, b, a)                    [UIColor colorWithRed:r/255.0 green:g/255.0 blue:b/255.0 alpha:a]
+#define HEXCOLOR(c)                         [UIColor colorWithRed:((c>>16)&0xFF)/255.0 green:((c>>8)&0xFF)/255.0 blue:(c&0xFF)/255.0 alpha:1.0]
+//Format
+#define F(string, args...)                  [NSString stringWithFormat:string, args]
+
+#define scaleH [UIScreen mainScreen].bounds.size.height / 896.0
+#define wc_scale [UIScreen mainScreen].bounds.size.width / 750.0
+#define font_scale [UIScreen mainScreen].bounds.size.width / 414.0
+#define spaceHeight(width) width*wc_scale*scaleH
+#define ANDY_Adapta(width) (width*wc_scale)
+//字体
+#define Font_(x) [UIFont fontWithName:@"PingFangSC-Regular" size:x*font_scale]
+#define FontBold_(x) [UIFont fontWithName:@"PingFangSC-Semibold" size: x*font_scale]
+
+#define SCREENWIDTH [UIScreen mainScreen].bounds.size.width
+#define SCREENHEIGHT [UIScreen mainScreen].bounds.size.height
+
+//字体颜色
+//登录文字颜色
+#define LoginTitleColor RGBA(137, 104, 198, 1)
+//tabbar背景色
+#define TabbarColor RGBA(104, 86, 191, 1)
+//我的  文字颜色
+#define MYTEXT_COLOR RGBA(0, 0, 51, 1)
+//头部背景色
+#define NavigationBarColor RGBA(100, 83, 181, 1)
+//线
+#define LineColor RGBA(204, 204, 204, 1)
+//消息
+#define MessageColor RGBA(153, 153, 153, 1)
+//灰色  分红记录
+#define GrayColor RGBA(170, 170, 170, 1)
+//排行榜 颜色
+#define RankColor RGBA(254, 172, 56, 1)
+//钱 颜色
+#define MoneyColor RGBA(249, 100, 100, 1)
+//标题 颜色
+#define TitleColor RGBA(42, 42, 42, 1)
+//紫底背景
+#define BlackBgColor RGBA(82, 50, 130, 1)
+
+//进度条选中颜色
+#define ProgressSelectColor RGBA(71, 195, 94, 1)
+#define ProgressNoColor RGBA(244, 244, 244, 1)
+
+//排行榜类型
+#define GOLDRANK @"GOLD_COINS"
+#define DIANGUKARANK @"ALLUSION"
+#define PROFITRANK @"EARNINGS"
+
+//Log
+#ifdef DEBUG
+#define LFLog(...) NSLog(__VA_ARGS__)
+#else
+#define LFLog(...)
+#endif
+
+
+//视频类型
+#define BUADVIDEOTYPE @"PANGOLIN"
+#define TENCENTVIDEOTYPE @"TENCENT"
+#define SIGMOBVIDEOTYPE @"SIG_MOB"
+//任务类型
+#define TASKVIDEO @"VIDEO"
+#define TASKANSWER @"ANSWER"
+#define TASKSHARE @"SHARE"
+#define TASKTARGET_URL @"TARGET_URL"
+#define TASKDUOYOU @"DUOYOU"
+#define TASKTUIA @"TUIYA"
+#define TASKIBX @"ABX"
+
+//#ifdef DEBUG //调试
+//
+//#define NSLog(FORMAT, ...) fprintf(stderr, "%s:%zd\t%s\n", [[[NSString stringWithUTF8String: __FILE__] lastPathComponent] UTF8String], __LINE__, [[NSString stringWithFormat: FORMAT, ## __VA_ARGS__] UTF8String]);
+//
+//#else // 发布
+//
+//#define NSLog(FORMAT, ...) nil
+//
+//#endif
+#define NSLog(FORMAT, ...) fprintf(stderr, "%s:%zd\t%s\n", [[[NSString stringWithUTF8String: __FILE__] lastPathComponent] UTF8String], __LINE__, [[NSString stringWithFormat: FORMAT, ## __VA_ARGS__] UTF8String]);
+
+#endif /* PrefixHeader_pch */
